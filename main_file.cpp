@@ -31,8 +31,11 @@ Place, Fifth Floor, Boston, MA  02110 - 1301  USA
 #include "allmodels.h"
 #include "myCube.h"
 #include "drzewo.h"
+#include "cone.h"
 
 using namespace glm;
+
+cone stozek;
 
 GLuint tex; //Uchwyt na teksturę
 float wzrost = 1;
@@ -154,7 +157,7 @@ void drawScene(GLFWwindow* window,float angle_x, float angle_y, drzewo D, float 
 	mat4 P=perspective(50.0f*PI/180.0f, 1.0f, 1.0f, 50.0f); //Wylicz macierz rzutowania
 
 	mat4 V=lookAt( //Wylicz macierz widoku
-	vec3(5.0f,5.0f,-49.0f),
+	vec3(0.0f,0.0f,-9.0f),
 	vec3(0.0f,0.0f,0.0f),
 	vec3(0.0f,1.0f,0.0f));
 
@@ -177,15 +180,22 @@ void drawScene(GLFWwindow* window,float angle_x, float angle_y, drzewo D, float 
     glColor3d(0.0,0.7,0.0);
     Models::cube.drawSolid();
 
-
-
     glColor3d(1.0,1.0,1.0);
-
-
     glEnable(GL_TEXTURE_2D);
+
+    mat4 M=Mz;
+    M=rotate(M,90.0f*PI/180.0f,vec3(-1.0f,0.0f,0.0f));
+    M=scale(M, vec3(1.0f,1.0f,4.0f));
+    glLoadMatrixf(value_ptr(V*M));
+
+    stozek.drawCone();
+
+
+
+
     // pien
 
-    D.rysuj_drzewo(Mz, V, wzrost);
+    //D.rysuj_drzewo(Mz, V, wzrost);
 
 	glfwSwapBuffers(window);
 

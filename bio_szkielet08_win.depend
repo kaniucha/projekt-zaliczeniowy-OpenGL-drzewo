@@ -2925,7 +2925,7 @@
 	<iostream>
 	"lodepng.h"
 
-1526752828 source:c:\users\katar\dysk google\!semestr vi\opengl\drzewo najnowsze\projekt-zaliczeniowy-opengl-drzewo\main_file.cpp
+1527773289 source:c:\users\katar\dysk google\!semestr vi\opengl\drzewo najnowsze\projekt-zaliczeniowy-opengl-drzewo\main_file.cpp
 	<GL/glew.h>
 	<GLFW/glfw3.h>
 	<glm/glm.hpp>
@@ -2938,6 +2938,7 @@
 	"allmodels.h"
 	"myCube.h"
 	"drzewo.h"
+	"cone.h"
 
 1469357978 c:\users\katar\dysk google\!semestr vi\opengl\drzewo najnowsze\projekt-zaliczeniowy-opengl-drzewo\glew\include\gl\glew.h
 	<stddef.h>
@@ -3077,4 +3078,16 @@
 
 1487675316 source:c:\users\katar\dysk google\!semestr vi\opengl\drzewo najnowsze\projekt-zaliczeniowy-opengl-drzewo\torus.cpp
 	"torus.h"
+
+1527775285 c:\users\katar\dysk google\!semestr vi\opengl\drzewo najnowsze\projekt-zaliczeniowy-opengl-drzewo\include\cone.h
+
+1527775404 source:c:\users\katar\dysk google\!semestr vi\opengl\drzewo najnowsze\projekt-zaliczeniowy-opengl-drzewo\src\cone.cpp
+	"include/cone.h"
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<glm/glm.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<stdlib.h>
+	<stdio.h>
 
