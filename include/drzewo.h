@@ -30,7 +30,7 @@ class drzewo
         void rysuj_galaz(mat4 M_matki, float wys_matki, mat4 V, float wzrost, galaz G);
         void rysuj_drzewo(mat4 Mz, mat4 V, float wzrost);
         int losuj(int mini, int maxi);
-        void rysuj_protopadloscian(mat4 V, mat4 M, float a, float b, float c);
+        void rysuj_protopadloscian(mat4 V, mat4 M, float wzrost);
 };
 
 #endif // DRZEWO_H

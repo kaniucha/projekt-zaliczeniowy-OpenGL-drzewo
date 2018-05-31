@@ -2925,7 +2925,7 @@
 	<iostream>
 	"lodepng.h"
 
-1527773289 source:c:\users\katar\dysk google\!semestr vi\opengl\drzewo najnowsze\projekt-zaliczeniowy-opengl-drzewo\main_file.cpp
+1527781332 source:c:\users\katar\dysk google\!semestr vi\opengl\drzewo najnowsze\projekt-zaliczeniowy-opengl-drzewo\main_file.cpp
 	<GL/glew.h>
 	<GLFW/glfw3.h>
 	<glm/glm.hpp>
@@ -3024,7 +3024,7 @@
 
 1524468101 c:\users\katar\dysk google\!semestr vi\opengl\drzewo najnowsze\projekt-zaliczeniowy-opengl-drzewo\mycube.h
 
-1526752697 c:\users\katar\dysk google\!semestr vi\opengl\drzewo najnowsze\projekt-zaliczeniowy-opengl-drzewo\include\drzewo.h
+1527781686 c:\users\katar\dysk google\!semestr vi\opengl\drzewo najnowsze\projekt-zaliczeniowy-opengl-drzewo\include\drzewo.h
 	<list>
 	"galaz.h"
 	<GL/glew.h>
@@ -3044,7 +3044,7 @@
 1487675316 source:c:\users\katar\dysk google\!semestr vi\opengl\drzewo najnowsze\projekt-zaliczeniowy-opengl-drzewo\sphere.cpp
 	"sphere.h"
 
-1526752662 source:c:\users\katar\dysk google\!semestr vi\opengl\drzewo najnowsze\projekt-zaliczeniowy-opengl-drzewo\src\drzewo.cpp
+1527781698 source:c:\users\katar\dysk google\!semestr vi\opengl\drzewo najnowsze\projekt-zaliczeniowy-opengl-drzewo\src\drzewo.cpp
 	"include/drzewo.h"
 	<cstdlib>
 	<time.h>
@@ -3058,6 +3058,7 @@
 	<stdlib.h>
 	<stdio.h>
 	"allmodels.h"
+	"include/cone.h"
 
 1526752747 source:c:\users\katar\dysk google\!semestr vi\opengl\drzewo najnowsze\projekt-zaliczeniowy-opengl-drzewo\src\galaz.cpp
 	"galaz.h"

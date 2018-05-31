@@ -38,13 +38,17 @@ using namespace glm;
 cone stozek;
 
 GLuint tex; //Uchwyt na teksturę
-float wzrost = 1;
-float tempo_wzrostu=0.02;
-float max_wysokosc_drzewa=5;
+
+float wzrost = 1.0;
+float tempo_wzrostu=0.2;
+float max_wysokosc_drzewa=10;
+
 float aspect=1.0f; //Aktualny stosunek szerokości do wysokości okna
 float speed_x=0; //Szybkość kątowa obrotu obiektu w radianach na sekundę wokół osi x
 float speed_y=0; //Szybkość kątowa obrotu obiektu w radianach na sekundę wokół osi y
 galaz lista_galezi[5];
+
+
 //Procedura obsługi błędów
 void error_callback(int error, const char* description) {
 	fputs(description, stderr);
@@ -157,9 +161,9 @@ void drawScene(GLFWwindow* window,float angle_x, float angle_y, drzewo D, float 
 	mat4 P=perspective(50.0f*PI/180.0f, 1.0f, 1.0f, 50.0f); //Wylicz macierz rzutowania
 
 	mat4 V=lookAt( //Wylicz macierz widoku
-	vec3(0.0f,0.0f,-9.0f),
-	vec3(0.0f,0.0f,0.0f),
-	vec3(0.0f,1.0f,0.0f));
+        vec3(0.0f,0.0f,-49.0f),
+        vec3(0.0f,0.0f,0.0f),
+        vec3(0.0f,1.0f,0.0f));
 
 	glMatrixMode(GL_PROJECTION); //Włącz tryb modyfikacji macierzy rzutowania
 	glLoadMatrixf(value_ptr(P)); //Skopiuj macierz rzutowania
@@ -183,19 +187,11 @@ void drawScene(GLFWwindow* window,float angle_x, float angle_y, drzewo D, float 
     glColor3d(1.0,1.0,1.0);
     glEnable(GL_TEXTURE_2D);
 
-    mat4 M=Mz;
-    M=rotate(M,90.0f*PI/180.0f,vec3(-1.0f,0.0f,0.0f));
-    M=scale(M, vec3(1.0f,1.0f,4.0f));
-    glLoadMatrixf(value_ptr(V*M));
-
-    stozek.drawCone();
-
-
 
 
     // pien
 
-    //D.rysuj_drzewo(Mz, V, wzrost);
+    D.rysuj_drzewo(Mz, V, wzrost);
 
 	glfwSwapBuffers(window);
 
@@ -240,15 +236,17 @@ int main(void)
 	initOpenGLProgram(window); //Operacje inicjujące
 
 
-	float angle_x=0.0f; //Aktualny kąt obrotu obiektu wokół osi x
+	float angle_x=-0.105f; //Aktualny kąt obrotu obiektu wokół osi x
 	float angle_y=0.0f; //Aktualny kąt obrotu obiektu wokół osi y
 	glfwSetTime(0); //Wyzeruj timer
 
 	//Główna pętla
 	while (!glfwWindowShouldClose(window)) //Tak długo jak okno nie powinno zostać zamknięte
 	{
-	    angle_x+=speed_x*glfwGetTime(); //Oblicz przyrost kąta obrotu i zwiększ aktualny kąt
+
+        angle_x+=speed_x*glfwGetTime(); //Oblicz przyrost kąta obrotu i zwiększ aktualny kąt
         angle_y+=speed_y*glfwGetTime(); //Oblicz przyrost kąta obrotu i zwiększ aktualny kąt
+
 	    glfwSetTime(0); //Wyzeruj timer
 		drawScene(window,angle_x,angle_y,D, wzrost); //Wykonaj procedurę rysującą
 		glfwPollEvents(); //Wykonaj procedury callback w zalezności od zdarzeń jakie zaszły.
